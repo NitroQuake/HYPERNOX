@@ -19,9 +19,9 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-# Configure CS50 Library to use SQLite database
-db = mysql.connector.connect(host = "localhost", user = "root", passwd = "ghs2021!", database = "minecraft")
-mycursor = db.cursor(dictionary=True)
+# Configure CS50 Library to use database
+#db = mysql.connector.connect(host = "localhost", user = "root", passwd = "ghs2021!", database = "minecraft")
+#mycursor = db.cursor(dictionary=True)
 
 list_of_key_stats = ["wins_bedwars", "losses_bedwars", "winstreak", "beds_broken_bedwars", "beds_lost_bedwars", "games_played_bedwars", "coins",
                      "items_purchased_bedwars", "resources_collected_bedwars", "eight_one_winstreak", "eight_two_winstreak", "four_three_winstreak",
@@ -45,9 +45,9 @@ def after_request(response):
 
 @app.route("/", methods=["GET"])
 def index():
-    mycursor.execute("SELECT * FROM players")
-    people = mycursor.fetchall()
-    return render_template("index.html", people=people)
+    #mycursor.execute("SELECT * FROM players")
+    #people = mycursor.fetchall()
+    return render_template("index.html") #, people = people)
     
 @app.route("/covrstats", methods=["GET"])
 def covrstats():
