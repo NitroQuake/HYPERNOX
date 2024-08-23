@@ -1,16 +1,14 @@
 import os
 
 #import mysql.connector
-from flask_session import Session
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+#from flask_session import Session
+from flask import Flask, flash, jsonify, redirect, render_template, request #, session
 
 import requests
-from PIL import Image, ImageOps
+from PIL import Image
 from io import BytesIO
 import json
 import base64
-from pprint import pprint
-import datetime
 
 # prototype
 # Configure application
