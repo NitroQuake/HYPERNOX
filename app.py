@@ -1,6 +1,6 @@
 import os
 
-import mysql.connector
+#import mysql.connector
 from flask_session import Session
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 
@@ -77,8 +77,8 @@ def ovrstats():
     if not username:
         return redirect("/")
 
-    mycursor.execute("INSERT INTO players (username) VALUES(%s)", (username,))
-    db.commit()
+    #mycursor.execute("INSERT INTO players (username) VALUES(%s)", (username,))
+    #db.commit()
 
     API_KEY = "5cd75e04-638f-4f31-b8af-8af1a0402f36" #8/22
 
