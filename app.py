@@ -12,6 +12,7 @@ import base64
 from pprint import pprint
 import datetime
 
+# prototype
 # Configure application
 app = Flask(__name__)
 
