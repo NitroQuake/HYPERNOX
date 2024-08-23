@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HYPERNOX
+{% endblock %}
+
+{% block main %}
+    <img class="minecraft-wallpaper-1-icon" alt="" src="/static/mc_wallpaper.png">
+    <div class="frame">
+        <div class="title-parent">
+            <b class="title">HYPERNOX</b>
+            <div class="subtitle">{% block subtitle %}{% endblock %}</div>
+        </div>
+        {% block form %}{% endblock %}
+    </div>
+{% endblock %}
+

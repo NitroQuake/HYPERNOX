@@ -1,0 +1,159 @@
+For Bedwars, Game modes are put in the order [amount of teams]_[players per team]_[key] eg, Eight_two_final_kills_bedwars for doubles.
+
+Standard
+Dream
+Prestige Progress
+Layout
+Practice
+Challenges 
+Slumber
+
+Must Include:
+
+general overall stats
+"games_played_bedwars"
+"wins_bedwars"
+"losses_bedwars"
+"coins"
+"beds_broken_bedwars"
+"beds_lost_bedwars" 
+"deaths_bedwars" 
+"final_deaths_bedwars"
+"kills_bedwars"
+"final_kills_bedwars"
+"_winstreak"
+
+general game mode stats
+"_beds_lost_bedwars"
+"_deaths_bedwars"
+"_games_played_bedwars"
+"_wins_bedwars"
+"_losses_bedwars"
+"_final_deaths_bedwars"
+"_kills_bedwars"
+"_final_kills_bedwars"
+"_beds_broken_bedwars"
+"_winstreak"
+
+gamemodes
+"four_four_" fours
+"eight_two_" doubles
+"four_three" threes
+"eight_one" solos
+"two_four" 4v4
+
+"eight_one_rush_"
+"eight_two_rush_"
+"four_four_rush_"
+
+"eight_one_ultimate"
+"eight_two_ultimate"
+"four_four_ultimate_"
+
+"eight_two_lucky"
+"four_four_lucky_"
+
+"eight_two_swap_"
+"four_four_swap_"
+
+"eight_two_voidless_"
+"four_four_voidless"
+
+"eight_two_armed_"
+"four_four_armed_"
+
+"eight_two_underworld_"
+"four_four_underworld_"
+
+"castle_"
+
+kills
+"entity_attack_kills_bedwars"
+"kills_bedwars"
+"void_kills_bedwars"
+"fall_kills_bedwars"
+"entity_explosion_kills_bedwars"
+"magic_kills_bedwars"
+"fire_tick_kills_bedwars"
+"projectile_kills_bedwars"
+"fire_kills_bedwars"
+
+final kills
+"entity_attack_final_kills_bedwars"
+"fall_final_kills_bedwars"
+"void_final_kills_bedwars"
+"magic_final_kills_bedwars"
+"fire_final_kills_bedwars"
+"fire_tick_final_kills_bedwars"
+"entity_explosion_final_kills_bedwars"
+"projectile_final_kills_bedwars"
+"fire_final_kills_bedwars"
+
+deaths
+"void_deaths_bedwars"
+"entity_attack_deaths_bedwars"
+"magic_deaths_bedwars"
+"fall_deaths_bedwars"
+"projectile_deaths_bedwars"
+"entity_explosion_deaths_bedwars"
+"fire_tick_deaths_bedwars"
+"suffocation_deaths_bedwars"
+"fire_deaths_bedwars"
+
+final deaths
+"void_final_deaths_bedwars"
+"entity_attack_final_deaths_bedwars"
+"magic_final_deaths_bedwars"
+"fall_final_deaths_bedwars"
+"projectile_final_deaths_bedwars"
+"entity_explosion_final_deaths_bedwars"
+"fire_tick_final_deaths_bedwars"
+"suffocation_final_deaths_bedwars"
+"fire_final_deaths_bedwars"
+
+Maybe Add:
+
+other general total/game mode stats
+"_items_purchased_bedwars"
+"_resources_collected_bedwars"
+"_permanent_items_purchased_bedwars"
+"_iron_resources_collected_bedwars"
+"_gold_resources_collected_bedwars"
+"_diamond_resources_collected_bedwars"
+"_emerald_resources_collected_bedwars"
+
+shop menu
+"favourites_2" 
+
+hotbar slots
+"favorite_slots" 
+
+ultimate special stat
+"selected_ultimate"
+
+practice stats 
+"practice" 
+
+list of owned bedwars cosmetics
+"packages" 
+
+Bedwars Cosmetics 
+"activeProjectileTrail"
+"activeDeathCry"
+"activeKillEffect"
+"activeIslandTopper"
+"activeVictoryDance"
+"activeSprays"
+"activeGlyph"
+"activeNPCSkin"
+"activeKillMessages"
+"activeWoodType"
+
+bedwars challenges
+"selected_challenge_type" 
+"total_challenges_completed"
+"challenges" best time for bw challenges 
+
+"slumber" slumber hotel stats
+
+

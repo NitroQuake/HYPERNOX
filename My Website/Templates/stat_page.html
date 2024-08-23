@@ -1,0 +1,628 @@
+{% extends "stat_page_layout.html" %}
+
+{% block title %}
+    HYPERNOX
+{% endblock %}
+
+{% block main %}
+    <div class="section-title1">
+        <div class="lineara-progress-bar-second">
+            <div class="rectangle">
+            </div>
+        </div>
+        <div id = "slider-stat">
+            <input type="radio" name="slider-stat" id="button1-stat" checked>
+            <input type="radio" name="slider-stat" id="button2-stat">
+            <input type="radio" name="slider-stat" id="button3-stat">
+            <input type="radio" name="slider-stat" id="button4-stat">
+            <input type="radio" name="slider-stat" id="button5-stat">
+            <input type="radio" name="slider-stat" id="button6-stat">
+            <input type="radio" name="slider-stat" id="button7-stat">
+            <div id="slides-stat">
+                <div id="overflow">
+                    <div class="inner-stat">
+                        <div class="h22 slide-text">STANDARD</div>
+                        <div class="h22 slide-text">DREAM</div>
+                        <div class="h22 slide-text">PRESTIGE PROGRESS</div>
+                        <div class="h22 slide-text">PRACTICE</div>
+                        <div class="h22 slide-text">LAYOUT</div>
+                        <div class="h22 slide-text">CHALLENGES</div>
+                        <div class="h22 slide-text">SLUMBER HOTEL</div>
+                    </div>
+                </div>
+            </div>
+            <div id="controls-stat">
+                <label for="button1-stat"></label>
+                <label for="button2-stat"></label>
+                <label for="button3-stat"></label>
+                <label for="button4-stat"></label>
+                <label for="button5-stat"></label>
+                <label for="button6-stat"></label>
+                <label for="button7-stat"></label>
+            </div>
+            <div id="bullets-stat">
+                <label for="button1-stat"></label>
+                <label for="button2-stat"></label>
+                <label for="button3-stat"></label>
+                <label for="button4-stat"></label>
+                <label for="button5-stat"></label>
+                <label for="button6-stat"></label>
+                <label for="button7-stat"></label>
+            </div>
+        </div>
+        <div class="lineara-progress-bar-second">
+            <div class="rectangle">
+            </div>
+        </div>
+    </div>
+    <div class="section-general">
+        <div class="frame-parent">
+            <div class="header-cell-group">
+                <div class="header-cell1">
+                    <div class="bedwars-ovrerall-stats">Carried stats</div>
+                </div>
+                <div class="item-cell6">
+                    <div class="wins-1102-losses-container">Carried: {{ stat_dict["carried_normal"][4] | format_number }}</div>
+                </div>
+                <div class="header-cell-container">
+                    <div class="header-cell2">
+                        <div class="bedwars-ovrerall-stats">MODE</div>
+                    </div>
+                    <div class="header-cell2">
+                        <div class="bedwars-ovrerall-stats">CARRIED</div>
+                    </div>
+                    <div class="header-cell2">
+                        <div class="bedwars-ovrerall-stats">% of wins</div>
+                    </div>
+                </div>
+                <div class="column-group">
+                    <div class="column">
+                        <div class="item-cell7">
+                            <b class="doubles">Doubles</b>
+                        </div>
+                        <div class="item-cell7">
+                            <b class="doubles">THrees</b>
+                        </div>
+                        <div class="item-cell7">
+                            <b class="doubles">FOURS</b>
+                        </div>
+                        <div class="item-cell7">
+                            <b class="doubles">4v4</b>
+                        </div>
+                        <div class="item-cell11">
+                            <b class="doubles">overall</b>
+                        </div>
+                    </div>
+                    <div class="column4">
+                        {% for stat in stat_dict["carried_normal"] %}
+                            {% if loop.index != 5 %}
+                                <div class="item-cell12">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% elif loop.index == 5 %}
+                                <div class="item-cell16">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="column">
+                        {% for stat in stat_dict["carried_percent_normal"] %}
+                            {% if loop.index != 5 %}
+                                <div class="item-cell12">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% elif loop.index == 5 %}
+                                <div class="item-cell16">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="header-cell-group">
+                <div class="header-cell1">
+                    <div class="bedwars-ovrerall-stats">econ</div>
+                </div>
+                <div class="item-cell22">
+                    <div class="wins-1102-losses-container">
+                        <p class="w-l">Permanent Items Purchased: {{ stat_dict["permanent_items_purchased_bedwars_normal"][0] | format_number}}</p>
+                        <p class="w-l">Items Purchased: {{ stat_dict["items_purchased_bedwars_normal"][0] | format_number}} </p>
+                        <p class="w-l">Resources Collect: {{ stat_dict["resources_collected_bedwars_normal"][4] | format_number}}</p>
+                        <p class="w-l">P / C: {{ stat_dict["items_purchased_bedwars_normal"][0] | format_ratio(stat_dict["resources_collected_bedwars_normal"][4]) }}</p>
+                    </div>
+                </div>
+                <div class="header-cell-container">
+                    <div class="header-cell2">
+                        <div class="bedwars-ovrerall-stats">Resource</div>
+                    </div>
+                    <div class="header-cell2">
+                        <div class="bedwars-ovrerall-stats">Count</div>
+                    </div>
+                    <div class="header-cell2">
+                        <div class="bedwars-ovrerall-stats">Resource / Game</div>
+                    </div>
+                </div>
+                <div class="column-group">
+                    <div class="column">
+                        <div class="item-cell7">
+                            <b class="doubles">IRON</b>
+                        </div>
+                        <div class="item-cell7">
+                            <b class="doubles">GOLD</b>
+                        </div>
+                        <div class="item-cell7">
+                            <b class="doubles">DIAMOND</b>
+                        </div>
+                        <div class="item-cell7">
+                            <b class="doubles">EMERALD</b>
+                        </div>
+                        <div class="item-cell11">
+                            <b class="doubles">overall</b>
+                        </div>
+                    </div>
+                    <div class="column4">
+                        {% for stat in stat_dict["resources_collected_bedwars_normal"] %}
+                            {% if loop.index != 5 %}
+                                <div class="item-cell12">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% elif loop.index == 5 %}
+                                <div class="item-cell16">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="column">
+                        {% for stat in stat_dict["resources_collected_bedwars_per_collect_normal"] %}
+                            {% if loop.index != 5 %}
+                                <div class="item-cell12">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% elif loop.index == 5 %}
+                                <div class="item-cell16">
+                                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="frame-group">
+            <div class="header-cell-parent2">
+                <div class="header-cell1">
+                    <div class="bedwars-ovrerall-stats">GEneral stats</div>
+                </div>
+                <div class="column-parent1">
+                    <div class="column">
+                        <div class="item-cell38">
+                            <div class="wins-1102-losses-container">
+                                <p class="w-l">Games Played: {{ stat_dict["games_played_bedwars_normal"][0] | format_number }}</p>
+                                <p class="w-l">Beds / Game: {{ stat_dict["beds_broken_bedwars_normal"][6] | format_ratio(stat_dict["games_played_bedwars_normal"][0]) }}</p>
+                                <p class="w-l">Final Kills / Game: {{ stat_dict["final_kills_bedwars_normal"][6] | format_ratio(stat_dict["games_played_bedwars_normal"][0]) }}</p>
+                                <p class="w-l">Kills / Game {{ stat_dict["kills_bedwars_normal"][6] | format_ratio(stat_dict["games_played_bedwars_normal"][0]) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="item-cell38">
+                            <div class="wins-1102-losses-container">
+                                <p class="w-l">Solo Winstreak: {{ stat_dict["eight_one_winstreak"][0] | format_number }}</p>
+                                <p class="w-l">Doubles Winstreak: {{ stat_dict["eight_two_winstreak"][0] | format_number }}</p>
+                                <p class="w-l">Threes Winstreak: {{ stat_dict["four_three_winstreak"][0] | format_number }}</p>
+                                <p class="w-l">Fours Winstreak: {{ stat_dict["four_four_winstreak"][0] | format_number }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table2">
+                <div class="column11">
+                    <div class="header-cell10">
+                        <div class="bedwars-ovrerall-stats">Mode</div>
+                    </div>
+                    <div class="item-cell7">
+                        <b class="doubles">Solo</b>
+                    </div>
+                    <div class="item-cell7">
+                        <b class="doubles">Doubles</b>
+                    </div>
+                    <div class="item-cell7">
+                        <b class="doubles">threes</b>
+                    </div>
+                    <div class="item-cell7">
+                        <b class="doubles">fours</b>
+                    </div>
+                    <div class="item-cell44">
+                        <b class="doubles">Core</b>
+                    </div>
+                    <div class="item-cell7">
+                        <b class="doubles">4v4</b>
+                    </div>
+                    <div class="item-cell11">
+                        <b class="doubles">Overall</b>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">Wins</div>
+                    </div>
+                    {% for stat in stat_dict["wins_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">losses</div>
+                    </div>
+                    {% for stat in stat_dict["losses_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column14">
+                    <div class="header-cell10">
+                        <div class="bedwars-ovrerall-stats">w / l</div>
+                    </div>
+                    {% for stat in stat_dict["wins_bedwars_normal"] %}
+                        {% set win = stat_dict["wins_bedwars_normal"][loop.index0] %}
+                        {% set loss = stat_dict["losses_bedwars_normal"][loop.index0] %}
+
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell7">
+                                <div class="bedwars-ovrerall-stats">{{ win | format_ratio(loss) }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell44">
+                                <div class="bedwars-ovrerall-stats">{{ win | format_ratio(loss) }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell11">
+                                <div class="bedwars-ovrerall-stats">{{ win | format_ratio(loss) }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">Beds Broken</div>
+                    </div>
+                    {% for stat in stat_dict["beds_broken_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">Beds lost</div>
+                    </div>
+                    {% for stat in stat_dict["beds_lost_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column14">
+                    <div class="header-cell10">
+                        <div class="bedwars-ovrerall-stats">B / L</div>
+                    </div>
+                    {% for stat in stat_dict["beds_broken_bedwars_normal"] %}
+                        {% set b_broken = stat_dict["beds_broken_bedwars_normal"][loop.index0] %}
+                        {% set b_lost = stat_dict["beds_lost_bedwars_normal"][loop.index0] %}
+
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell7">
+                                <div class="bedwars-ovrerall-stats">{{ b_broken | format_ratio(b_lost) }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell44">
+                                <div class="bedwars-ovrerall-stats">{{ b_broken | format_ratio(b_lost) }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell11">
+                                <div class="bedwars-ovrerall-stats">{{ b_broken | format_ratio(b_lost) }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">Final kills</div>
+                    </div>
+                    {% for stat in stat_dict["final_kills_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">Final Deaths</div>
+                    </div>
+                    {% for stat in stat_dict["final_deaths_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column14">
+                    <div class="header-cell10">
+                        <div class="bedwars-ovrerall-stats">
+                            <p class="w-l">Final </p>
+                            <p class="w-l">k / d</p>
+                        </div>
+                    </div>
+                    {% for stat in stat_dict["final_kills_bedwars_normal"] %}
+                        {% set f_kill = stat_dict["final_kills_bedwars_normal"][loop.index0] %}
+                        {% set f_death = stat_dict["final_deaths_bedwars_normal"][loop.index0] %}
+
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell7">
+                                <div class="bedwars-ovrerall-stats">{{ f_kill | format_ratio(f_death) }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell44">
+                                <div class="bedwars-ovrerall-stats">{{ f_kill | format_ratio(f_death) }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell11">
+                                <div class="bedwars-ovrerall-stats">{{ f_kill | format_ratio(f_death) }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">kills</div>
+                    </div>
+                    {% for stat in stat_dict["kills_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="header-cell11">
+                        <div class="bedwars-ovrerall-stats">deaths</div>
+                    </div>
+                    {% for stat in stat_dict["deaths_bedwars_normal"] %}
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell12">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell51">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell16">
+                                <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="column14">
+                    <div class="header-cell22">
+                        <div class="bedwars-ovrerall-stats">k / d</div>
+                    </div>
+                    {% for stat in stat_dict["kills_bedwars_normal"] %}
+                        {% set kill = stat_dict["kills_bedwars_normal"][loop.index0] %}
+                        {% set death = stat_dict["deaths_bedwars_normal"][loop.index0] %}
+
+                        {% if loop.index != 5 and loop.index != 7 %}
+                            <div class="item-cell7">
+                                <div class="bedwars-ovrerall-stats">{{ kill | format_ratio(death) }}</div>
+                            </div>
+                        {% elif loop.index == 5 %}
+                            <div class="item-cell44">
+                                <div class="bedwars-ovrerall-stats">{{ kill | format_ratio(death) }}</div>
+                            </div>
+                        {% elif loop.index == 7 %}
+                            <div class="item-cell11">
+                                <div class="bedwars-ovrerall-stats">{{ kill | format_ratio(death) }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-title2">
+        <div class="lineara-progress-bar-second4">
+            <div class="rectangle">
+            </div>
+        </div>
+        <div class="h216">K/D BREAKDOWN</div>
+        <div class="lineara-progress-bar-second4">
+            <div class="rectangle">
+            </div>
+        </div>
+    </div>
+    <div class="table1">
+        <div class="column24">
+            <div class="header-cell23">
+                <div class="bedwars-ovrerall-stats">K/d Types</div>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">entity</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">void</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">fall</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">magic</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">explosion</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">projectile</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">fire tick</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">fire</b>
+            </div>
+            <div class="item-cell131">
+                <b class="doubles">Suffocation</b>
+            </div>
+        </div>
+        <div class="column25">
+            <div class="header-cell24">
+                <div class="bedwars-ovrerall-stats">final kills</div>
+            </div>
+            {% for stat in stat_dict["final_kills_bedwars_type_normal"] %}
+                <div class="item-cell140">
+                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                </div>
+            {% endfor %}
+            <div class="item-cell140">
+                <div class="bedwars-ovrerall-stats">N / a</div>
+            </div>
+        </div>
+        <div class="column25">
+            <div class="header-cell24">
+                <div class="bedwars-ovrerall-stats">final deaths</div>
+            </div>
+            {% for stat in stat_dict["final_deaths_bedwars_type_normal"] %}
+                <div class="item-cell140">
+                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="column24">
+            <div class="header-cell23">
+                <div class="bedwars-ovrerall-stats">FINAL K / d</div>
+            </div>
+            {% for stat in stat_dict["final_kills_bedwars_type_normal"] %}
+                {% set f_kill = stat_dict["final_kills_bedwars_type_normal"][loop.index0] %}
+                {% set f_death = stat_dict["final_deaths_bedwars_type_normal"][loop.index0] %}
+                <div class="item-cell131">
+                    <div class="bedwars-ovrerall-stats">{{ f_kill | format_ratio(f_death) }}</div>
+                </div>
+            {% endfor %}
+            <div class="item-cell131">
+                <b class="doubles">N / A</b>
+            </div>
+        </div>
+        <div class="column25">
+            <div class="header-cell24">
+                <div class="bedwars-ovrerall-stats">kills</div>
+            </div>
+            {% for stat in stat_dict["kills_bedwars_type_normal"] %}
+                <div class="item-cell140">
+                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                </div>
+            {% endfor %}
+            <div class="item-cell140">
+                <div class="bedwars-ovrerall-stats">N / a</div>
+            </div>
+        </div>
+        <div class="column25">
+            <div class="header-cell24">
+                <div class="bedwars-ovrerall-stats">deaths</div>
+            </div>
+            {% for stat in stat_dict["deaths_bedwars_type_normal"] %}
+                <div class="item-cell140">
+                    <div class="bedwars-ovrerall-stats">{{ stat | format_number }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="column24">
+            <div class="header-cell1">
+                <div class="bedwars-ovrerall-stats">K / d</div>
+            </div>
+            {% for stat in stat_dict["kills_bedwars_type_normal"] %}
+                {% set kill = stat_dict["kills_bedwars_type_normal"][loop.index0] %}
+                {% set death = stat_dict["deaths_bedwars_type_normal"][loop.index0] %}
+                <div class="item-cell140">
+                    <div class="bedwars-ovrerall-stats">{{ kill | format_ratio(death) }}</div>
+                </div>
+            {% endfor %}
+            <div class="item-cell140">
+                <b class="doubles">N / A</b>
+            </div>
+        </div>
+    </div>
+{% endblock %}

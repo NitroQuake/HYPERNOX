@@ -1,0 +1,32 @@
+{% extends "homepage_layout.html" %}
+
+{% block title %}
+    HYPERNOX
+{% endblock %}
+
+{% block subtitle %}
+    Compare {{ typeStat }} Stats
+{% endblock %}
+
+{% block form %}
+    <form action="{{ '/' + typeStat }}" method="post">
+        <div class="center-button"> 
+            <input class="input-text"  name="username1" placeholder="Username 1"></input>
+        </div>
+        <div class="lineara-progress-bar-second-parent">
+            <div class="lineara-progress-bar-second">
+                <div class="rectangle">
+                </div>
+            </div>
+            <div class="h3">V.S.</div>
+            <div class="lineara-progress-bar-second">
+                <div class="rectangle">
+                </div>
+            </div>
+        </div>
+        <div class="center-button"> 
+            <input class="input-text"  name="username2" placeholder="Username 2"></input>
+        </div>
+        <button class="input-center-button" type="submit">Submit</button>
+    </form>
+{% endblock %}

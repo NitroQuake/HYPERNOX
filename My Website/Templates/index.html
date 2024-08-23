@@ -1,0 +1,17 @@
+{% extends "homepage_layout.html" %}
+
+{% block title %}
+    HYPERNOX
+{% endblock %}
+
+{% block subtitle %}
+    Hypixel Bedwars Stat Tracker
+{% endblock %}
+
+{% block form %}
+    <form action="/ovrstats" method="post" class="text-fields1-filleda-no-le">
+        <input class="input-text"  name="username" placeholder="Username"></input>
+        <button class="input-button" type="submit">Submit</button>
+    </form>
+{% endblock %}
+
